@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Tree = require('../models/Tree');
 
-// Route hiển thị danh sách cây
 router.get('/', async (req, res) => {
   try {
     const trees = await Tree.find({});
@@ -13,7 +12,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Route thêm cây mới
 router.post('/add', async (req, res) => {
   const { treename, description, image } = req.body;
 
